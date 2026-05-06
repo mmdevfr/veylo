@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veylo | Roseville Local Services</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.85);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #222;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 34px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #00ff99;
+      text-shadow: 0 0 15px rgba(0,255,153,0.6);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ff99;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 8%;
+      background:
+        radial-gradient(circle at top, rgba(0,255,153,0.18), transparent 35%),
+        linear-gradient(135deg, #080808, #111);
+    }
+
+    .hero h1 {
+      font-size: 68px;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero span {
+      color: #00ff99;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 20px;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    .location {
+      margin-top: 18px;
+      color: #00ff99;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 15px 32px;
+      background: #00ff99;
+      color: #000;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 25px #00ff99;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 50px;
+      color: #00ff99;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #121212;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #242424;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #00ff99;
+      box-shadow: 0 0 20px rgba(0,255,153,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 23px;
+    }
+
+    .card p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .info-box {
+      max-width: 950px;
+      margin: auto;
+      background: #121212;
+      padding: 35px;
+      border-radius: 22px;
+      border: 1px solid #242424;
+      text-align: center;
+    }
+
+    .info-box p {
+      font-size: 20px;
+      color: #ddd;
+      margin: 14px 0;
+    }
+
+    .calendar-box {
+      margin-top: 30px;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid #333;
+    }
+
+    iframe {
+      width: 100%;
+      height: 650px;
+      border: 0;
+      display: block;
+    }
+
+    .contact {
+      text-align: center;
+      background:
+        radial-gradient(circle at bottom, rgba(0,255,153,0.12), transparent 40%),
+        #0b0b0b;
+    }
+
+    .phone {
+      font-size: 38px;
+      color: #00ff99;
+      margin-top: 18px;
+      font-weight: bold;
+    }
+
+    .note {
+      color: #999;
+      margin-top: 16px;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #050505;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 750px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .phone {
+        font-size: 28px;
+      }
+
+      iframe {
+        height: 500px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">VEYLO</div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#hours">Hours</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+
+      <h1>Local Help, <span>Done Right.</span></h1>
+
+      <p>
+        Veylo is a Roseville-based local service team helping with car washes,
+        gardening work, garbage cleaning, first-floor window cleaning,
+        tech help, and small bike repairs.
+      </p>
+
+      <div class="location">
+        Based in Roseville, California
+      </div>
+
+      <a class="btn" href="sms:9169439664">
+        Text Us Now
+      </a>
+
+    </div>
+  </section>
+
+  <section id="services">
+
+    <h2 class="section-title">What We Do</h2>
+
+    <div class="services">
+
+      <div class="card">
+        <h3>Car Washes</h3>
+        <p>
+          Exterior washes to help keep your car looking clean and fresh.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Gardening Work</h3>
+        <p>
+          Weeding, cleanup, watering help, and simple yard maintenance.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Garbage Cleaning</h3>
+        <p>
+          Trash area cleanup, garbage bin rinsing, and odor cleaning.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>1st Floor Window Cleaning</h3>
+        <p>
+          Safe and simple first-floor residential window cleaning.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Tech Help</h3>
+        <p>
+          Help with printers, Wi-Fi, TVs, computers, phones, and setup.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Small Bike Repairs</h3>
+        <p>
+          Tire air, chain fixes, cleaning, seat adjustments, and more.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="hours">
+
+    <h2 class="section-title">Availability</h2>
+
+    <div class="info-box">
+
+      <p>
+        <strong>Monday - Friday:</strong>
+        3:00 PM - 7:00 PM
+      </p>
+
+      <p>
+        <strong>Saturday - Sunday:</strong>
+        12:00 PM - 8:00 PM
+      </p>
+
+      <p>
+        Available all week in Roseville and nearby areas.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="calendar">
+
+    <h2 class="section-title">Booked Times</h2>
+
+    <div class="info-box">
+
+      <p>
+        Check our calendar below to see what times are already booked.
+      </p>
+
+      <div class="calendar-box">
+
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=239ed827a29287793215705621194c7a3feb53a1c59b52bd62b217463276bd01%40group.calendar.google.com&ctz=America%2FLos_Angeles"
+          scrolling="no">
+        </iframe>
+
+      </div>
+
+      <p class="note">
+        To book a time, please text us directly.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <p>
+      Text us to ask questions, get pricing, or book a job.
+    </p>
+
+    <div class="phone">
+      916-943-9664
+    </div>
+
+    <a class="btn" href="sms:9169439664">
+      Send Text
+    </a>
+
+    <p class="note">
+      Serving Roseville, CA and nearby areas.
+    </p>
+
+  </section>
+
+  <footer>
+    © 2026 Veylo. Local services done with care.
+  </footer>
+
+</body>
+</html>
